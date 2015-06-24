@@ -1,5 +1,4 @@
 #Harvard CS50
-##The greatest computer science class ever!
 
 Harvard's Introduction to Computer Science course is one of the most famous MOOC classes in the world today. To learn more about Professor David J. Malan and the contents of the course, please visit https://cs50.harvard.edu. 
 
