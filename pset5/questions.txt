@@ -1,0 +1,24 @@
+0.  Per Wikipedia, pneumonoultramicroscopicsilicovolcanoconiosis is an English word that refers to a lung disease that is otherwise known as silicosis.
+1.  getrusage leverages computer time and resource data to determine how long a task takes.
+2.  There are 16 variables in struct rusage.
+3.  They are passed by reference so that the function doesn't create local variables, but rather edits variables in the program itself.
+4.  Unlike my method of loading data into a linked list, this method looks at the for loop at a character level.
+Only if the character is valid (i.e. alpha or apostraphe), the letter is added to the string which builds a 
+new word. If the word is "too long" (i.e. somehow appears to be more than the longest english word, which is
+45 characters, the balance of the word is ignored. At the end of the word, index is set back to 0 to start
+at a new word.
+
+If the character at a specific index is a number, ignore the rest of the word, similar to if it was too long.
+
+If the above two if statements aren't "triggered", a null terminator is added. The word's spelling is tested, and
+once done counters are updated and index is reset.
+
+5.  We may not be able to see each word at a time because a line may contain multiple words.
+6.  They are set up as such because the function should not have he capability to alter the word.
+7.  I used a simple linked list with a linear structure. Each node allows for storage of a word and pointer
+to next node.
+8.  It is currently on its first iteration and is potentially running at 27x slower than what's possible. 
+Need to expedite the process by implementing a hash table next!
+9.  I did implement some methods to speed up the check method, but additional improvements await!
+10. I didn't like my ability to compare the word to the fgets version of the word with a "\n" at the end. 
+But it was the best I could do thus far!
