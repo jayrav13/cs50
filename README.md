@@ -1,5 +1,5 @@
 #Harvard CS50
 
-Harvard's Introduction to Computer Science course is one of the most famous MOOC classes in the world today. To learn more about Professor David J. Malan and the contents of the course, please visit https://cs50.harvard.edu. 
+Here is a repo of my coursework through Harvard CS50, primarily done in C. Towards the end of the course, we were also introduced to web development (PHP, MySQL, JavaScript + HTML/CSS). My final project for this class was an iOS app called Midloc which has it's own repo!
 
-This course has served as nothing but an inspiration to me as I decided to pivot my career towards Software Engineering. Please take a minute to review the submitted coursework, primarily written in C!
+More Info: cs50.harvard.edu 
