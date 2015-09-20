@@ -13,15 +13,12 @@ void scan(struct node *node);
 void add(int val, struct node *node);
 int search(int val, struct node *node);
 void clear(struct node *node);
-void push(int val, struct node *node);
-void pop(int val, struct node *node);
+void push(int val, struct node **node);
+struct node *pop(struct node **node);
 
 // main
 int main()
 {
-	// declare array
-	int values[] = {1,2,3,4,5,6,7,8,9,10};
-	
 	// set up head node
 	struct node *head = (struct node*) malloc(sizeof(struct node));
 	head->x = 3;
@@ -36,13 +33,24 @@ int main()
 
 	// scan over linked list
 	scan(head);
+
+	// add a few values...
+	add(20, head);
+	add(25, head);
+	add(32, head);
 	
-	add(10, head);
+	// scan to confirm they've been added
+	scan(head);
 
-	scan(head);	
+	// is 42 a part of the list?
+	printf("Searching for 42. Search status: %d\n", search(42, head));
 
-	printf("Found in list status: %d.\n", search(4, head));
+	push(-2, &head);	
+	push(4, &head);
 
+	scan(head);
+
+	// clear the list.
 	clear(head);
 
 }
@@ -106,3 +114,15 @@ void clear(struct node *node) {
 		current = next;
 	}
 }
+
+void push(int val, struct node **node) {
+	struct node *new = (struct node*) malloc(sizeof(struct node));
+
+	new->next = *node;
+	new->x = val;
+	*node = new;
+
+	printf("Pushed %d onto the stack\n", new->x);
+}
+
+
