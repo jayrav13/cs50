@@ -15,6 +15,9 @@ void traverse(struct node* head);
 int counter(struct node* head);
 int search(struct node* head, int n);
 void delete(struct node* head, int n);
+void push(struct node* head, int n);
+void pop(struct node* head);
+void clear(struct node* head);
 
 // main
 int main(int argc, char* argv[])
@@ -47,6 +50,16 @@ int main(int argc, char* argv[])
 	delete(head, 1);
 	delete(head, 10);
 	traverse(head);
+
+	push(head, 22);
+	push(head, 31);
+	push(head, 1);
+	traverse(head);
+
+	pop(head);
+	pop(head);
+	traverse(head);
+
 }
 
 // add to end of linked list
@@ -130,4 +143,42 @@ void delete(struct node* head, int n)
 			next = next->next;
 		}
 	}
+	printf("Deleted %d from linked list.\n", n);
+}
+
+void push(struct node* head, int n)
+{
+	struct node* ptr = head;
+	
+	struct node* new = malloc(sizeof(node));
+	new->n = n;
+	new->next = ptr->next;
+
+	head->next = new;
+
+	printf("Pushed %d onto the linked list.\n", n);
+}
+
+void pop(struct node* head)
+{
+	struct node* temp = head;
+	head->next = temp->next->next;
+	free(temp->next);
+	printf("Popped first value from linked list.\n");
+}
+
+void clear(struct node* head)
+{
+	struct node* prev = head;
+	struct node* next = head->next;
+
+	while(next != NULL)
+	{
+		next = next->next;
+		prev = prev->next;
+		free(prev);
+	}
+
+	printf("List cleared.\n");
+
 }
